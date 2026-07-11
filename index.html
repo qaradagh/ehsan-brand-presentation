@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ehsan Fayazi brand identity presentation for liquidity-based Forex trading." />
+  <title>Ehsan Fayazi | Brand Identity Presentation</title>
+
+  <style>
+    :root {
+      --bg: #181918;
+      --bg-soft: #202220;
+      --card: rgba(255, 255, 255, 0.055);
+      --card-border: rgba(230, 230, 225, 0.14);
+      --text: #e6e6e1;
+      --muted: #a7aaa4;
+      --red: #f21546;
+      --gray: #6d706d;
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(242, 21, 70, 0.18), transparent 34%),
+        radial-gradient(circle at 90% 18%, rgba(109, 112, 109, 0.22), transparent 36%),
+        linear-gradient(135deg, #121312 0%, var(--bg) 50%, #0f100f 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background-image:
+        linear-gradient(rgba(230, 230, 225, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230, 230, 225, 0.04) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 88%);
+      pointer-events: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      opacity: 0.08;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    }
+
+    .spotlight {
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 21, 70, 0.18), transparent 65%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: -1;
+      transition: opacity 0.2s ease;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      width: min(var(--max), calc(100% - 28px));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px;
+      border: 1px solid rgba(230, 230, 225, 0.12);
+      border-radius: 999px;
+      background: rgba(24, 25, 24, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mini img {
+      width: 38px;
+      height: 38px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 20px rgba(242, 21, 70, 0.18));
+    }
+
+    .brand-mini span {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      color: var(--muted);
+      font-size: 13px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(230, 230, 225, 0.14);
+      background: rgba(230, 230, 225, 0.08);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 650;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(230, 230, 225, 0.12);
+      border-color: rgba(230, 230, 225, 0.22);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--red), #ff4a72);
+      border-color: rgba(242, 21, 70, 0.5);
+      color: white;
+      box-shadow: 0 18px 45px rgba(242, 21, 70, 0.28);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 132px 0 70px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.03fr 0.97fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(230, 230, 225, 0.065);
+      border: 1px solid rgba(230, 230, 225, 0.12);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 7px rgba(242, 21, 70, 0.12);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(48px, 8vw, 106px);
+      line-height: 0.88;
+      letter-spacing: -0.07em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--text), #ffffff 45%, var(--red));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin: 26px 0 0;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 560px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.03)),
+        radial-gradient(circle at 50% 20%, rgba(242, 21, 70, 0.22), transparent 42%);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform-style: preserve-3d;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(230, 230, 225, 0.08);
+      border-radius: 26px;
+      pointer-events: none;
+    }
+
+    .hero-logo-wrap {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 68px;
+    }
+
+    .hero-logo {
+      width: min(390px, 78%);
+      filter: drop-shadow(0 30px 70px rgba(0, 0, 0, 0.35));
+      animation: floatLogo 5s ease-in-out infinite;
+    }
+
+    .ticker {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .ticker-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(24, 25, 24, 0.66);
+      border: 1px solid rgba(230, 230, 225, 0.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .ticker-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .ticker-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .orb {
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 21, 70, 0.32), transparent 67%);
+      top: -70px;
+      right: -70px;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      color: var(--red);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 750;
+    }
+
+    h2 {
+      margin: 10px 0 0;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      position: relative;
+      padding: 28px;
+      min-height: 250px;
+      border-radius: var(--radius-lg);
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(242, 21, 70, 0.35);
+      background: rgba(255, 255, 255, 0.075);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      right: -50px;
+      bottom: -50px;
+      border-radius: 50%;
+      background: rgba(242, 21, 70, 0.15);
+      filter: blur(4px);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: rgba(242, 21, 70, 0.12);
+      color: var(--red);
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      letter-spacing: -0.035em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .showcase {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .logo-stage {
+      min-height: 520px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--card-border);
+      background:
+        linear-gradient(135deg, rgba(230,230,225,0.07), rgba(230,230,225,0.025)),
+        radial-gradient(circle at 50% 50%, rgba(242, 21, 70, 0.17), transparent 45%);
+      display: grid;
+      place-items: center;
+      padding: 56px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .logo-stage img {
+      width: min(430px, 86%);
+      animation: slowRotate 10s ease-in-out infinite alternate;
+    }
+
+    .logo-stage::before,
+    .logo-stage::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 120%;
+      background: linear-gradient(90deg, transparent, rgba(242, 21, 70, 0.9), transparent);
+      transform: rotate(-28deg);
+      opacity: 0.55;
+    }
+
+    .logo-stage::before {
+      top: 31%;
+      animation: scan 4.6s ease-in-out infinite;
+    }
+
+    .logo-stage::after {
+      top: 67%;
+      animation: scan 5.4s ease-in-out infinite reverse;
+    }
+
+    .anatomy {
+      display: grid;
+      gap: 16px;
+    }
+
+    .anatomy-item {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .anatomy-item span {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--red);
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .anatomy-item h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      letter-spacing: -0.035em;
+    }
+
+    .anatomy-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .swatch {
+      min-height: 300px;
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(230, 230, 225, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.24);
+      transition: transform 0.25s ease;
+    }
+
+    .swatch:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+
+    .swatch strong {
+      font-size: 21px;
+      letter-spacing: -0.035em;
+    }
+
+    .swatch code {
+      margin-top: 8px;
+      color: inherit;
+      opacity: 0.82;
+      font-size: 13px;
+    }
+
+    .swatch.dark { background: #181918; }
+    .swatch.red { background: #f21546; }
+    .swatch.light { background: #e6e6e1; color: #181918; }
+    .swatch.gray { background: #6d706d; }
+
+    .mockups {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .dashboard {
+      min-height: 480px;
+      padding: 22px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.052);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .dashboard-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dots i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(230, 230, 225, 0.2);
+    }
+
+    .chart {
+      height: 340px;
+      border-radius: 22px;
+      background:
+        linear-gradient(rgba(230, 230, 225, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(230, 230, 225, 0.045) 1px, transparent 1px);
+      background-size: 36px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .chart svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .mock-card {
+      min-height: 480px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--card-border);
+      background:
+        radial-gradient(circle at 50% 18%, rgba(242, 21, 70, 0.22), transparent 45%),
+        rgba(255, 255, 255, 0.052);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .mock-card img {
+      width: 112px;
+      align-self: flex-start;
+    }
+
+    .mock-card h3 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .mock-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 16px 0 0;
+    }
+
+    .quote {
+      padding: 70px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(242, 21, 70, 0.18), rgba(255,255,255,0.045)),
+        rgba(255,255,255,0.055);
+      border: 1px solid rgba(242, 21, 70, 0.22);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .quote p {
+      margin: 0 auto;
+      max-width: 900px;
+      font-size: clamp(30px, 5vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      font-weight: 800;
+    }
+
+    .quote span {
+      display: block;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 16px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      padding: 44px 0;
+      color: var(--muted);
+      border-top: 1px solid rgba(230, 230, 225, 0.1);
+    }
+
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-14px) scale(1.018); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.75; }
+      50% { transform: scale(1.14); opacity: 1; }
+    }
+
+    @keyframes slowRotate {
+      from { transform: perspective(1000px) rotateX(0deg) rotateY(-4deg); }
+      to { transform: perspective(1000px) rotateX(3deg) rotateY(5deg); }
+    }
+
+    @keyframes scan {
+      0%, 100% { transform: translateX(-14%) rotate(-28deg); opacity: 0.15; }
+      50% { transform: translateX(14%) rotate(-28deg); opacity: 0.65; }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .section-title,
+      .showcase,
+      .mockups {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 460px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .palette {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .brand-mini span {
+        display: none;
+      }
+
+      .nav {
+        top: 12px;
+      }
+
+      .hero {
+        padding-top: 112px;
+      }
+
+      .hero-card,
+      .logo-stage,
+      .dashboard,
+      .mock-card {
+        min-height: 390px;
+        border-radius: 24px;
+      }
+
+      .hero-logo-wrap,
+      .logo-stage {
+        padding: 34px;
+      }
+
+      .ticker {
+        grid-template-columns: 1fr;
+      }
+
+      .ticker-card {
+        padding: 12px;
+      }
+
+      .palette {
+        grid-template-columns: 1fr;
+      }
+
+      .swatch {
+        min-height: 190px;
+      }
+
+      .quote {
+        padding: 36px 22px;
+      }
+
+      .footer .container {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="noise"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a class="brand-mini" href="#top" aria-label="Ehsan Fayazi home">
+      <img src="Ehsan_Logo.svg" alt="Ehsan Fayazi logo" />
+      <span>Ehsan Fayazi</span>
+    </a>
+
+    <div class="nav-links" aria-label="Main navigation">
+      <a href="#concept">Concept</a>
+      <a href="#system">System</a>
+      <a href="#palette">Palette</a>
+      <a href="#applications">Applications</a>
+    </div>
+
+    <a class="btn primary" href="#final">View Essence</a>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="eyebrow">Liquidity-Based Trading Identity</div>
+          <h1>
+            A sharp visual system for
+            <span class="gradient-text">Ehsan Fayazi.</span>
+          </h1>
+          <p class="lead">
+            A premium brand identity presentation built around structure, movement, liquidity,
+            and a custom EF monogram designed for a modern Forex trader.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#concept">Explore Concept</a>
+            <a class="btn" href="#system">See Logo System</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal" data-tilt>
+          <div class="orb"></div>
+          <div class="hero-logo-wrap">
+            <img class="hero-logo" src="Ehsan_Logo.svg" alt="Ehsan Fayazi primary logo" />
+          </div>
+          <div class="ticker" aria-label="Brand attributes">
+            <div class="ticker-card">
+              <small>Focus</small>
+              <strong>Liquidity</strong>
+            </div>
+            <div class="ticker-card">
+              <small>Method</small>
+              <strong>Structure</strong>
+            </div>
+            <div class="ticker-card">
+              <small>Signal</small>
+              <strong>Motion</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="concept" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <div class="kicker">Core Concept</div>
+            <h2>Personal initials shaped by market logic.</h2>
+          </div>
+          <p>
+            The identity combines the initials E and F with a visual language inspired by
+            price structure, vertical levels, and directional movement through liquidity zones.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="icon">E</div>
+            <h3>Hidden Initial</h3>
+            <p>
+              The lower structure reveals the letter E as a geometric foundation, grounding the mark
+              in Ehsan's personal identity.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">F</div>
+            <h3>Ascending Identity</h3>
+            <p>
+              The upper structure forms the letter F, rising above the diagonal axis as a symbol of
+              clarity, direction, and execution.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon">LIT</div>
+            <h3>Liquidity Movement</h3>
+            <p>
+              The diagonal cut is not a generic growth arrow. It represents price movement between
+              meaningful liquidity areas.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="system" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <div class="kicker">Logo System</div>
+            <h2>Built on contrast, rhythm, and precision.</h2>
+          </div>
+          <p>
+            The mark balances vertical stability with diagonal momentum. This gives the identity a
+            controlled but dynamic personality suitable for analytical trading.
+          </p>
+        </div>
+
+        <div class="showcase">
+          <div class="logo-stage reveal">
+            <img src="Ehsan_Logo.svg" alt="Ehsan Fayazi logo showcase" />
+          </div>
+
+          <div class="anatomy">
+            <article class="anatomy-item reveal">
+              <span>01 / Vertical Structure</span>
+              <h3>Discipline and Market Levels</h3>
+              <p>
+                The vertical forms suggest levels, candles, and measured structure. They create a
+                sense of control rather than randomness.
+              </p>
+            </article>
+
+            <article class="anatomy-item reveal">
+              <span>02 / Diagonal Motion</span>
+              <h3>Price Path and Transition</h3>
+              <p>
+                The diagonal axis introduces momentum and separates the composition into two zones:
+                foundation and activation.
+              </p>
+            </article>
+
+            <article class="anatomy-item reveal">
+              <span>03 / Visual Memory</span>
+              <h3>A Discoverable Monogram</h3>
+              <p>
+                The EF combination is intentionally subtle, giving the logo a second layer that makes
+                it more memorable during presentation.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="palette" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <div class="kicker">Color Palette</div>
+            <h2>Energy meets control.</h2>
+          </div>
+          <p>
+            The palette uses a dark trading-inspired foundation, a high-impact red accent, a warm
+            off-white, and a neutral gray for balance and maturity.
+          </p>
+        </div>
+
+        <div class="palette">
+          <div class="swatch dark reveal">
+            <strong>Charcoal Black</strong>
+            <code>#181918</code>
+          </div>
+          <div class="swatch red reveal">
+            <strong>Signal Red</strong>
+            <code>#F21546</code>
+          </div>
+          <div class="swatch light reveal">
+            <strong>Warm White</strong>
+            <code>#E6E6E1</code>
+          </div>
+          <div class="swatch gray reveal">
+            <strong>Neutral Gray</strong>
+            <code>#6D706D</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="applications" class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <div class="kicker">Applications</div>
+            <h2>Designed for digital-first trading content.</h2>
+          </div>
+          <p>
+            The identity can expand across profile images, dashboards, trading reports, educational
+            decks, video intros, thumbnails, and social media systems.
+          </p>
+        </div>
+
+        <div class="mockups">
+          <div class="dashboard reveal">
+            <div class="dashboard-top">
+              <div class="dots" aria-hidden="true">
+                <i></i><i></i><i></i>
+              </div>
+              <span class="kicker">Liquidity Map</span>
+            </div>
+
+            <div class="chart" aria-label="Abstract trading chart">
+              <svg viewBox="0 0 800 340" preserveAspectRatio="none" role="img" aria-label="Animated liquidity chart">
+                <defs>
+                  <linearGradient id="line" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#6D706D" />
+                    <stop offset="55%" stop-color="#E6E6E1" />
+                    <stop offset="100%" stop-color="#F21546" />
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="5" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                <path d="M0 230 C90 210 115 270 185 232 S305 120 390 155 S505 245 585 160 S705 70 800 105"
+                  fill="none" stroke="url(#line)" stroke-width="5" filter="url(#glow)">
+                  <animate attributeName="stroke-dasharray" values="0 900;900 0" dur="3.2s" repeatCount="indefinite" />
+                </path>
+
+                <line x1="0" y1="112" x2="800" y2="112" stroke="#F21546" stroke-width="1.5" opacity="0.58" stroke-dasharray="8 10" />
+                <line x1="0" y1="232" x2="800" y2="232" stroke="#6D706D" stroke-width="1.5" opacity="0.68" stroke-dasharray="8 10" />
+
+                <circle cx="610" cy="145" r="8" fill="#F21546">
+                  <animate attributeName="r" values="7;15;7" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite" />
+                </circle>
+              </svg>
+            </div>
+          </div>
+
+          <article class="mock-card reveal">
+            <img src="Ehsan_Logo.svg" alt="Ehsan Fayazi logo application" />
+            <div>
+              <h3>From mark to market presence.</h3>
+              <p>
+                A flexible identity system that feels premium, technical, and confident without
+                relying on overused trading symbols.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="final" class="section">
+      <div class="container">
+        <div class="quote reveal">
+          <p>Structure in analysis. Precision in decision. Movement through liquidity.</p>
+          <span>Ehsan Fayazi Brand Essence</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>Brand identity presentation for Ehsan Fayazi.</span>
+      <span>Liquidity-focused Forex trading identity.</span>
+    </div>
+  </footer>
+
+  <script>
+    const spotlight = document.querySelector(".spotlight");
+
+    window.addEventListener("pointermove", (event) => {
+      spotlight.style.left = `${event.clientX}px`;
+      spotlight.style.top = `${event.clientY}px`;
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll(".reveal").forEach((element, index) => {
+      element.style.transitionDelay = `${Math.min(index * 55, 300)}ms`;
+      observer.observe(element);
+    });
+
+    document.querySelectorAll("[data-tilt]").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const rotateY = ((x / rect.width) - 0.5) * 8;
+        const rotateX = ((0.5 - y / rect.height)) * 8;
+        card.style.transform = `perspective(1100px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.transform = "perspective(1100px) rotateX(0deg) rotateY(0deg)";
+      });
+    });
+  </script>
+</body>
+</html>
