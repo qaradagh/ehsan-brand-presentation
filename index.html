@@ -105,7 +105,7 @@
       width: 420px; height: 420px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(242, 21, 70, 0.18), transparent 65%);
-      transform: translate(50%, -50%); /* Adjusted for RTL */
+      transform: translate(50%, -50%);
       pointer-events: none;
       z-index: -1;
       transition: opacity 0.2s ease;
@@ -116,7 +116,7 @@
       margin: 0 auto;
     }
 
-    /* Navigation */
+    /* Navigation - پدینگ چپ و راست بیشتر شد تا لوگو از لبه فاصله بگیرد */
     .nav {
       position: fixed;
       top: 18px; left: 50%;
@@ -124,7 +124,7 @@
       z-index: 20;
       width: min(var(--max), calc(100% - 28px));
       display: flex; align-items: center; justify-content: space-between;
-      gap: 18px; padding: 12px 14px;
+      gap: 18px; padding: 12px 24px; /* <--- فاصله از کناره‌ها بیشتر شد */
       border: 1px solid rgba(230, 230, 225, 0.12);
       border-radius: 999px;
       background: rgba(24, 25, 24, 0.72);
@@ -132,7 +132,7 @@
       box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
     }
 
-    .brand-mini { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mini { display: flex; align-items: center; gap: 12px; min-width: 0; padding-right: 4px; }
     .brand-mini img { width: 38px; height: 38px; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(242, 21, 70, 0.18)); }
     .brand-mini span { font-size: 14px; font-weight: 700; white-space: nowrap; }
 
@@ -200,7 +200,7 @@
     .orb {
       position: absolute; width: 230px; height: 230px; border-radius: 50%;
       background: radial-gradient(circle, rgba(242, 21, 70, 0.32), transparent 67%);
-      top: -70px; left: -70px; /* Adjusted for RTL */
+      top: -70px; left: -70px;
       animation: pulse 4s ease-in-out infinite;
     }
 
@@ -220,7 +220,7 @@
     }
     .card:hover { transform: translateY(-7px); border-color: rgba(242, 21, 70, 0.35); background: rgba(255, 255, 255, 0.075); }
     .card::after {
-      content: ""; position: absolute; width: 120px; height: 120px; left: -50px; bottom: -50px; /* Adjusted for RTL */
+      content: ""; position: absolute; width: 120px; height: 120px; left: -50px; bottom: -50px;
       border-radius: 50%; background: rgba(242, 21, 70, 0.15); filter: blur(4px);
     }
     .icon {
@@ -299,8 +299,12 @@
     .quote p { margin: 0 auto; max-width: 900px; font-size: clamp(26px, 4vw, 56px); line-height: 1.2; font-weight: 800; }
     .quote span { display: block; margin-top: 22px; color: var(--muted); font-size: 16px; font-weight: 700; letter-spacing: 1px; }
 
+    /* Footer - استایل‌های جدید برای کردیت اضافه شد */
     .footer { padding: 44px 0; color: var(--muted); border-top: 1px solid rgba(230, 230, 225, 0.1); font-size: 14px; }
-    .footer .container { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .footer-top { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: 20px; }
+    .footer-bottom { text-align: center; border-top: 1px dashed rgba(230, 230, 225, 0.08); padding-top: 24px; }
+    .credit { font-size: 13px; opacity: 0.8; letter-spacing: 0.5px; }
+    .credit span { color: var(--red); font-size: 16px; vertical-align: middle; }
 
     /* Utils & Animations */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.75s ease, transform 0.75s ease; }
@@ -537,15 +541,13 @@
                   <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               </defs>
-              <path d="M0 230 C90 210 115 270 185 232 S305 120 390 155 S505 245 585 160 S705 70 800 105" fill="none" stroke="url(#line)" stroke-width="5" filter="url(#glow)">
-                <animate attributeName="stroke-dasharray" values="0 900;900 0" dur="3.2s" repeatCount="indefinite" />
+              <!-- مسیر (Path) جدید چارت: هانت نقدینگی پایین، سپس بالا، و ریزش -->
+              <path d="M0 180 C 50 170, 100 190, 150 180 S 220 280, 280 260 S 350 160, 420 180 S 550 50, 620 70 S 720 300, 800 320" fill="none" stroke="url(#line)" stroke-width="5" filter="url(#glow)">
+                <animate attributeName="stroke-dasharray" values="0 1100;1100 0" dur="3.5s" repeatCount="indefinite" />
               </path>
               <line x1="0" y1="112" x2="800" y2="112" stroke="#F21546" stroke-width="1.5" opacity="0.58" stroke-dasharray="8 10" />
               <line x1="0" y1="232" x2="800" y2="232" stroke="#6D706D" stroke-width="1.5" opacity="0.68" stroke-dasharray="8 10" />
-              <circle cx="610" cy="145" r="8" fill="#F21546">
-                <animate attributeName="r" values="7;15;7" dur="2s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite" />
-              </circle>
+              <!-- دایره قرمز حذف شد -->
             </svg>
           </div>
         </div>
@@ -587,16 +589,20 @@
 
   <footer class="footer">
     <div class="container">
-      <span>پرزنتیشن هویت بصری احسان فیاضی</span>
-      <span class="en-text">Liquidity-focused Forex trading identity.</span>
+      <div class="footer-top">
+        <span>پرزنتیشن هویت بصری احسان فیاضی</span>
+        <!-- با استفاده از dir="ltr" و حذف نقطه، مشکل پریدن نقطه به سمت چپ حل شد -->
+        <span class="en-text" dir="ltr">Liquidity-focused Forex trading identity</span>
+      </div>
+      <div class="footer-bottom">
+        <div class="en-text credit">Designed by Masiha with <span>❤️</span></div>
+      </div>
     </div>
   </footer>
 
   <script>
     const spotlight = document.querySelector(".spotlight");
     window.addEventListener("pointermove", (event) => {
-      // Adjusted spotlight calculation for potential RTL offset nuances, 
-      // standard clientX/Y works fine with fixed positioning.
       spotlight.style.left = `${event.clientX}px`;
       spotlight.style.top = `${event.clientY}px`;
     });
@@ -621,8 +627,6 @@
         const rect = card.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
-        // In RTL, sometimes we flip X rotation logic depending on preference, 
-        // but standard visual depth works the same.
         const rotateY = ((x / rect.width) - 0.5) * 8;
         const rotateX = ((0.5 - y / rect.height)) * 8;
         card.style.transform = `perspective(1100px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
