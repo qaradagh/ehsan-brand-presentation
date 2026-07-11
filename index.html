@@ -105,7 +105,7 @@
       width: 420px; height: 420px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(242, 21, 70, 0.18), transparent 65%);
-      transform: translate(50%, -50%);
+      transform: translate(-50%, -50%); /* این خط اصلاح شد تا نور دقیقا روی ماوس باشد */
       pointer-events: none;
       z-index: -1;
       transition: opacity 0.2s ease;
@@ -116,7 +116,6 @@
       margin: 0 auto;
     }
 
-    /* Navigation - پدینگ چپ و راست بیشتر شد تا لوگو از لبه فاصله بگیرد */
     .nav {
       position: fixed;
       top: 18px; left: 50%;
@@ -124,7 +123,7 @@
       z-index: 20;
       width: min(var(--max), calc(100% - 28px));
       display: flex; align-items: center; justify-content: space-between;
-      gap: 18px; padding: 12px 24px; /* <--- فاصله از کناره‌ها بیشتر شد */
+      gap: 18px; padding: 12px 24px;
       border: 1px solid rgba(230, 230, 225, 0.12);
       border-radius: 999px;
       background: rgba(24, 25, 24, 0.72);
@@ -299,7 +298,7 @@
     .quote p { margin: 0 auto; max-width: 900px; font-size: clamp(26px, 4vw, 56px); line-height: 1.2; font-weight: 800; }
     .quote span { display: block; margin-top: 22px; color: var(--muted); font-size: 16px; font-weight: 700; letter-spacing: 1px; }
 
-    /* Footer - استایل‌های جدید برای کردیت اضافه شد */
+    /* Footer */
     .footer { padding: 44px 0; color: var(--muted); border-top: 1px solid rgba(230, 230, 225, 0.1); font-size: 14px; }
     .footer-top { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: 20px; }
     .footer-bottom { text-align: center; border-top: 1px dashed rgba(230, 230, 225, 0.08); padding-top: 24px; }
@@ -541,34 +540,28 @@
                   <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                 </filter>
               </defs>
-              <!-- مسیر (Path) جدید چارت: هانت نقدینگی پایین، سپس بالا، و ریزش -->
               <path d="M0 180 C 50 170, 100 190, 150 180 S 220 280, 280 260 S 350 160, 420 180 S 550 50, 620 70 S 720 300, 800 320" fill="none" stroke="url(#line)" stroke-width="5" filter="url(#glow)">
                 <animate attributeName="stroke-dasharray" values="0 1100;1100 0" dur="3.5s" repeatCount="indefinite" />
               </path>
               <line x1="0" y1="112" x2="800" y2="112" stroke="#F21546" stroke-width="1.5" opacity="0.58" stroke-dasharray="8 10" />
               <line x1="0" y1="232" x2="800" y2="232" stroke="#6D706D" stroke-width="1.5" opacity="0.68" stroke-dasharray="8 10" />
-              <!-- دایره قرمز حذف شد -->
             </svg>
           </div>
         </div>
 
         <!-- User Requested Mockup Layout -->
         <div class="mockups-grid reveal">
-          <!-- 2 Square Mockups -->
           <div class="mockup-row squares">
               <img src="assets/mockups/mockup1.jpg" alt="Square Mockup 1">
               <img src="assets/mockups/mockup2.jpg" alt="Square Mockup 2">
           </div>
-          <!-- 2 Vertical A4 Mockups -->
           <div class="mockup-row vertical-a4">
               <img src="assets/mockups/mockup3.jpg" alt="A4 Mockup 1">
               <img src="assets/mockups/mockup4.jpg" alt="A4 Mockup 2">
           </div>
-          <!-- Wide Mockup 1 -->
           <div class="mockup-row wide">
               <img src="assets/mockups/mockup5.jpg" alt="Wide Mockup 1">
           </div>
-          <!-- Wide Mockup 2 -->
           <div class="mockup-row wide">
               <img src="assets/mockups/mockup6.jpg" alt="Wide Mockup 2">
           </div>
@@ -580,7 +573,7 @@
     <section id="final" class="section">
       <div class="container">
         <div class="quote reveal">
-          <p>ساختار در تحلیل.<br>دقت در تصمیم.<br>حرکت در نقدینگی.</p>
+          <p>تسلط بر نقدینگی.<br>درک جریان سفارشات.<br>اجرای بی‌نقص.</p>
           <span class="en-text">Ehsan Fayazi Brand Essence</span>
         </div>
       </div>
@@ -591,10 +584,10 @@
     <div class="container">
       <div class="footer-top">
         <span>پرزنتیشن هویت بصری احسان فیاضی</span>
-        <!-- با استفاده از dir="ltr" و حذف نقطه، مشکل پریدن نقطه به سمت چپ حل شد -->
         <span class="en-text" dir="ltr">Liquidity-focused Forex trading identity</span>
       </div>
-      <div class="footer-bottom">
+      <!-- ویژگی dir="ltr" به این بخش اضافه شد تا قلب سر جایش قرار بگیرد -->
+      <div class="footer-bottom" dir="ltr">
         <div class="en-text credit">Designed by Masiha with <span>❤️</span></div>
       </div>
     </div>
