@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ehsan Fayazi | Brand Identity</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --charcoal: #181918;
+            --red: #F21546;
+            --white: #E6E6E1;
+            --grey: #6D706D;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Space Grotesk', 'Vazirmatn', sans-serif;
+            background-color: var(--charcoal);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px 40px;
+            border-bottom: 1px solid var(--grey);
+        }
+
+        .header-logo {
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media(min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* Color Palette Section */
+        .color-blocks {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .color-swatch {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-end;
+            padding: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        /* Logo Variations Section */
+        .logo-box {
+            background-color: #222;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .logo-box img {
+            max-width: 100%;
+            max-height: 150px;
+        }
+
+        /* Mockups Section */
+        .mockup-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        @media(min-width: 768px) {
+            .mockup-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media(min-width: 1024px) {
+            .mockup-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .mockup-item {
+            aspect-ratio: 16 / 9; /* نسبت تصویر واید */
+            background-color: #0a0a0a; /* رنگ مشکی پیش‌فرض قبل از لود عکس */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--grey);
+        }
+
+        .mockup-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* متن جایگزین وقتی عکس نیست */
+        .mockup-placeholder-text {
+            position: absolute;
+            color: var(--grey);
+            font-size: 14px;
+            z-index: 0;
+        }
+        
+        .mockup-item img {
+            z-index: 1; /* تا روی متن پیش‌فرض قرار بگیرد */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="assets/logos/ehsan-primary-stacked.svg" alt="Ehsan Logo" class="header-logo">
+        <h1>هویت بصری احسان فیاضی</h1>
+        <p>معامله‌گر بازارهای مالی | Liquidity/LIT</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Concept Section -->
+        <section>
+            <h2>کانسپت و استراتژی</h2>
+            <p>این هویت بصری ترکیبی از حروف اختصاری (E & F) و ساختارهای نمودارهای مالی است. ستون‌های عمودی نماد کندل‌ها، نقدینگی و ثبات هستند، در حالی که خط مورب نشان‌دهنده رشد، حرکت قیمت و شکستن مرزهاست. رنگ قرمز (#F21546) نمایانگر انرژی، تصمیم‌گیری و نقدینگی در بازار است.</p>
+        </section>
+
+        <hr style="border-color: var(--grey); margin: 40px 0;">
+
+        <!-- Colors & Typography -->
+        <section class="grid-2">
+            <div>
+                <h2>پالت رنگی</h2>
+                <div class="color-blocks">
+                    <div class="color-swatch" style="background-color: var(--charcoal); border: 1px solid var(--grey);">
+                        #181918
+                    </div>
+                    <div class="color-swatch" style="background-color: var(--red); color: white;">
+                        #F21546
+                    </div>
+                    <div class="color-swatch" style="background-color: var(--white); color: black;">
+                        #E6E6E1
+                    </div>
+                    <div class="color-swatch" style="background-color: var(--grey); color: white;">
+                        #6D706D
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>تایپوگرافی</h2>
+                <h3 style="font-family: 'Space Grotesk', sans-serif;">Space Grotesk</h3>
+                <p>استفاده شده برای لوگوتایپ و متون انگلیسی. این فونت هندسی و مدرن، حس تکنولوژی، دقت و سرعت را منتقل می‌کند.</p>
+                <h3 style="font-family: 'Vazirmatn', sans-serif;">Vazirmatn</h3>
+                <p>برای متون فارسی جهت خوانایی بالا و هماهنگی با ساختار مدرن برند.</p>
+            </div>
+        </section>
+
+        <hr style="border-color: var(--grey); margin: 40px 0;">
+
+        <!-- Logo Variations -->
+        <section>
+            <h2>تنوع لوگوها (Logo Lockups)</h2>
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="logo-box">
+                    <img src="assets/logos/ehsan-primary-stacked.svg" alt="Primary Stacked">
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--grey);">لوگوی اصلی عمودی</p>
+                </div>
+                <div class="logo-box">
+                    <img src="assets/logos/ehsan-wordmark.svg" alt="Wordmark">
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--grey);">لوگوتایپ مستقل (Wordmark)</p>
+                </div>
+                <div class="logo-box">
+                    <img src="assets/logos/ehsan-symbol.svg" alt="Symbol">
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--grey);">نماد اصلی (Symbol)</p>
+                </div>
+                <div class="logo-box">
+                    <img src="assets/logos/ehsan-symbol-icon.svg" alt="Symbol Icon">
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--grey);">آیکون پروفایل (Symbol Icon)</p>
+                </div>
+                <div class="logo-box" style="grid-column: 1 / -1; max-width: 400px; margin: 0 auto; width: 100%; box-sizing: border-box;">
+                    <img src="assets/logos/ehsan-letter-icon.svg" alt="Letter Icon">
+                    <p style="margin-top: 15px; font-size: 14px; color: var(--grey);">آیکون ساده (Letter Icon - برای سایزهای کوچک)</p>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border-color: var(--grey); margin: 40px 0;">
+
+        <!-- Mockups Section -->
+        <section>
+            <h2>موکاپ‌ها و کاربردها</h2>
+            <p>نمایش هویت بصری در محیط‌ها و ابعاد مختلف.</p>
+            
+            <div class="mockup-grid">
+                <!-- Mockup 1 -->
+                <div class="mockup-item">
+                    <span class="mockup-placeholder-text">Mockup 1 (16:9)</span>
+                    <img src="assets/mockups/mockup_1.jpg" alt="Mockup 1" onerror="this.style.display='none'">
+                </div>
+                <!-- Mockup 2 -->
+                <div class="mockup-item">
+                    <span class="mockup-placeholder-text">Mockup 2 (16:9)</span>
+                    <img src="assets/mockups/mockup_2.jpg" alt="Mockup 2" onerror="this.style.display='none'">
+                </div>
+                <!-- Mockup 3 -->
+                <div class="mockup-item">
+                    <span class="mockup-placeholder-text">Mockup 3 (16:9)</span>
+                    <img src="assets/mockups/mockup_3.jpg" alt="Mockup 3" onerror="this.style.display='none'">
+                </div>
+                <!-- Mockup 4 -->
+                <div class="mockup-item">
+                    <span class="mockup-placeholder-text">Mockup 4 (16:9)</span>
+                    <img src="assets/mockups/mockup_4.jpg" alt="Mockup 4" onerror="this.style.display='none'">
+                </div>
+                <!-- Mockup 5 -->
+                <div class="mockup-item">
+                    <span class="mockup-placeholder-text">Mockup 5 (16:9)</span>
+                    <img src="assets/mockups/mockup_5.jpg" alt="Mockup 5" onerror="this.style.display='none'">
+                </div>
+                <!-- Mockup 6 -->
+                <div class="mockup-item">
+                    <span class="mockup-placeholder-text">Mockup 6 (16:9)</span>
+                    <img src="assets/mockups/mockup_6.jpg" alt="Mockup 6" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
